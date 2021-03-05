@@ -2,6 +2,7 @@
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using System.Text.Json;
 
 namespace ChallengeVoolkia
 {
@@ -26,9 +27,16 @@ namespace ChallengeVoolkia
 
                 //r.ToString();
                 //Console.WriteLine(response);
+                
                 return response;
             }
         }
+        public class Result
+        {
+            public string Id { set; get; }
+            public string Title { set; get; }
+            public string Category_id { get; set; }
 
+        }
     }
 }
