@@ -14,6 +14,12 @@ namespace ChallengeVoolkia
             Console.ReadKey();
         }
 
+
+        /// <summary>
+        /// Makes a request to the MELI Api to return all the products from a specificy seller. 
+        /// </summary>
+        /// <param name="seller_id">the seller id expresed as a string.</param>
+        /// <returns></returns>
         private static async Task<string> GetProductsAsync(string seller_id)
         {
             using (var client = new HttpClient())
