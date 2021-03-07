@@ -147,7 +147,7 @@ namespace ChallengeVoolkia
                 index++;
             }
 
-            await File.WriteAllTextAsync("LOG.TXT", sb.ToString());
+            await File.WriteAllTextAsync("LOG"+seller_id+".TXT", sb.ToString());
             Console.WriteLine("Finished Writing");
 
         }
