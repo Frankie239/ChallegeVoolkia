@@ -15,26 +15,39 @@ namespace ChallengeVoolkia
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Bienvenido, por favor ingrese el seller_id que quiere consultar");
+            Console.WriteLine("Bienvenido, por favor ingrese el seller_id que quiere consultar, si desea agregar mas de uno, separelos por comas.");
             string seller = Console.ReadLine();
+            string[] sellers = seller.Split(',');
 
+            for (int i = 0; i < sellers.Count(); i++)
+            {
+                WriteFileWithSellerId(sellers[i]);
+            }
             
-            WriteFileWithSellerId(seller);
 
-            Console.WriteLine("Escribiendo, por favor espere");
+            Console.WriteLine("Escribiendo, por favor espere...");
 
             
 
             Console.ReadKey();
         }
 
+        /// <summary>
+        /// Method to have everything encapsulated. 
+        /// </summary>
+        /// <param name="seller_id"></param>
         private static async void WriteFileWithSellerId(string seller_id)
         {
+            //Creating a list to store all the results. 
             List<Result> ObjectsResult = new List<Result>();
+            //String to store the json without being parsed
             string rawData = await GetProductsAsync(seller_id);
+
+            //Geting the data into the list of objects to later be printed into the txt file.
 
             ObjectsResult = await ParseJsonToModel(rawData);
 
+            //printing the file. 
             FileWriter(ObjectsResult, seller_id);
 
 
@@ -129,6 +142,12 @@ namespace ChallengeVoolkia
             return results["name"].ToString();
         }
 
+
+        /// <summary>
+        /// Method to give format and to print the txt file
+        /// </summary>
+        /// <param name="results">a list of the objects to print</param>
+        /// <param name="seller_id"> the seller id, just to give a title and a header</param>
         private static async void FileWriter(List<Result> results, string seller_id)
         {
             int index = 1; 
@@ -147,8 +166,9 @@ namespace ChallengeVoolkia
                 index++;
             }
 
-            await File.WriteAllTextAsync("LOG"+seller_id+".TXT", sb.ToString());
-            Console.WriteLine("Finished Writing");
+            await File.WriteAllTextAsync("LOG-"+seller_id+"-.txt", sb.ToString());
+
+            Console.WriteLine("Finnished" +seller_id);
 
         }
 
