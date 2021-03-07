@@ -1,0 +1,15 @@
+C:\Users\fran9\Documents\GitHub\ChallegeVoolkia\ChallengeVoolkia\ChallengeVoolkia\obj\Debug\netcoreapp3.1\ChallengeVoolkia.csprojAssemblyReference.cache
+C:\Users\fran9\Documents\GitHub\ChallegeVoolkia\ChallengeVoolkia\ChallengeVoolkia\obj\Debug\netcoreapp3.1\ChallengeVoolkia.AssemblyInfoInputs.cache
+C:\Users\fran9\Documents\GitHub\ChallegeVoolkia\ChallengeVoolkia\ChallengeVoolkia\obj\Debug\netcoreapp3.1\ChallengeVoolkia.AssemblyInfo.cs
+C:\Users\fran9\Documents\GitHub\ChallegeVoolkia\ChallengeVoolkia\ChallengeVoolkia\obj\Debug\netcoreapp3.1\ChallengeVoolkia.csproj.CoreCompileInputs.cache
+C:\Users\fran9\Documents\GitHub\ChallegeVoolkia\ChallengeVoolkia\ChallengeVoolkia\bin\Debug\netcoreapp3.1\ChallengeVoolkia.exe
+C:\Users\fran9\Documents\GitHub\ChallegeVoolkia\ChallengeVoolkia\ChallengeVoolkia\bin\Debug\netcoreapp3.1\ChallengeVoolkia.deps.json
+C:\Users\fran9\Documents\GitHub\ChallegeVoolkia\ChallengeVoolkia\ChallengeVoolkia\bin\Debug\netcoreapp3.1\ChallengeVoolkia.runtimeconfig.json
+C:\Users\fran9\Documents\GitHub\ChallegeVoolkia\ChallengeVoolkia\ChallengeVoolkia\bin\Debug\netcoreapp3.1\ChallengeVoolkia.runtimeconfig.dev.json
+C:\Users\fran9\Documents\GitHub\ChallegeVoolkia\ChallengeVoolkia\ChallengeVoolkia\bin\Debug\netcoreapp3.1\ChallengeVoolkia.dll
+C:\Users\fran9\Documents\GitHub\ChallegeVoolkia\ChallengeVoolkia\ChallengeVoolkia\bin\Debug\netcoreapp3.1\ChallengeVoolkia.pdb
+C:\Users\fran9\Documents\GitHub\ChallegeVoolkia\ChallengeVoolkia\ChallengeVoolkia\obj\Debug\netcoreapp3.1\ChallengeVoolkia.dll
+C:\Users\fran9\Documents\GitHub\ChallegeVoolkia\ChallengeVoolkia\ChallengeVoolkia\obj\Debug\netcoreapp3.1\ChallengeVoolkia.pdb
+C:\Users\fran9\Documents\GitHub\ChallegeVoolkia\ChallengeVoolkia\ChallengeVoolkia\obj\Debug\netcoreapp3.1\ChallengeVoolkia.genruntimeconfig.cache
+C:\Users\fran9\Documents\GitHub\ChallegeVoolkia\ChallengeVoolkia\ChallengeVoolkia\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\fran9\Documents\GitHub\ChallegeVoolkia\ChallengeVoolkia\ChallengeVoolkia\obj\Debug\netcoreapp3.1\ChallengeVoolkia.csproj.CopyComplete
