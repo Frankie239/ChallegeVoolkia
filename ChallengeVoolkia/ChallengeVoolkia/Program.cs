@@ -12,15 +12,24 @@ namespace ChallengeVoolkia
 {
     class Program
     {
-        static  void Main(string[] args)
+        static void Main(string[] args)
         {
 
 
-            string jsonData = "";
-            //This would not work because the method is ASYNC and there's no await. 
-            jsonData = GetProductsAsync("179571326").ToString();
-            /Console.WriteLine(jsonData);
+
+            
+            WriteFileWithSellerId("179571326");
+            
+            
             Console.ReadKey();
+        }
+
+        private static async void WriteFileWithSellerId(string seller_id)
+        {
+            string rawData = await GetProductsAsync(seller_id);
+
+            ParseJsonToModel(rawData);
+
         }
 
 
@@ -46,6 +55,8 @@ namespace ChallengeVoolkia
                 //This returns the whole list requested from the seller. 
                 response = await client.GetStringAsync(client.BaseAddress + seller_id);
             }
+
+
             return response.ToString();
         }
 
@@ -76,19 +87,21 @@ namespace ChallengeVoolkia
                 Result parsedObject = new Result()
                 {
                     id = results["results"][i]["id"].ToString(),
-                    title = results["results"][0]["title"].ToString(),
-                    category_id = results["results"][0]["category_id"].ToString(),
+                    title = results["results"][i]["title"].ToString(),
+                    category_id = results["results"][i]["category_id"].ToString(),
+                    
 
 
                 };
+                parsedObject.name = await GetCategoryName(parsedObject.category_id);
 
                 Results.Add(parsedObject);
             }
 
-            //Console.WriteLine(results["results"][0]["id"]);
-            //Console.WriteLine(results["results"][0]["title"]);
-            //Console.WriteLine(results["results"][0]["category_id"]);
-            //Console.WriteLine(results["results"].Count());
+            Console.WriteLine(results["results"][0]["id"]);
+            Console.WriteLine(results["results"][0]["title"]);
+            Console.WriteLine(results["results"][0]["category_id"]);
+            Console.WriteLine(results["results"].Count());
 
 
 
@@ -98,7 +111,28 @@ namespace ChallengeVoolkia
             
         }
 
-        
+        private static async Task<string> GetCategoryName(string category_id)
+        {
+            string response = "";
+            using (var client = new HttpClient())
+            {
+                //add a base addres. so this request can be done independent from the seller.
+                client.BaseAddress = new Uri("https://api.mercadolibre.com/categories/");
+                client.DefaultRequestHeaders.Accept.Clear();
+                //Accept the data type. 
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                //This returns the whole list requested from the seller. 
+                response = await client.GetStringAsync(client.BaseAddress + category_id);
+
+
+            }
+            JObject results = JObject.Parse(response);
+            Console.WriteLine(results["name"].ToString());
+           
+            return results["name"].ToString();
+        }
+
         public class Result
         {
             public string id;
@@ -106,6 +140,8 @@ namespace ChallengeVoolkia
             public string title;
 
             public string category_id;
+
+            public string name;
            
         }
 
