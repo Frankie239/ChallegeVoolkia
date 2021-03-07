@@ -2,11 +2,11 @@
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 using System.Linq;
+using System.IO;
+using System.Text;
 
 namespace ChallengeVoolkia
 {
@@ -15,20 +15,28 @@ namespace ChallengeVoolkia
         static void Main(string[] args)
         {
 
+            Console.WriteLine("Bienvenido, por favor ingrese el seller_id que quiere consultar");
+            string seller = Console.ReadLine();
 
+            
+            WriteFileWithSellerId(seller);
+
+            Console.WriteLine("Escribiendo, por favor espere");
 
             
-            WriteFileWithSellerId("179571326");
-            
-            
+
             Console.ReadKey();
         }
 
         private static async void WriteFileWithSellerId(string seller_id)
         {
+            List<Result> ObjectsResult = new List<Result>();
             string rawData = await GetProductsAsync(seller_id);
 
-            ParseJsonToModel(rawData);
+            ObjectsResult = await ParseJsonToModel(rawData);
+
+            FileWriter(ObjectsResult, seller_id);
+
 
         }
 
@@ -61,16 +69,6 @@ namespace ChallengeVoolkia
         }
 
                 
-
-                
-                
-                
-                
-
-                
-              
-                
-
         /// <summary>
         /// Gets the raw json data and selects it with the Json.Net library.
         /// </summary>
@@ -98,19 +96,18 @@ namespace ChallengeVoolkia
                 Results.Add(parsedObject);
             }
 
-            Console.WriteLine(results["results"][0]["id"]);
-            Console.WriteLine(results["results"][0]["title"]);
-            Console.WriteLine(results["results"][0]["category_id"]);
-            Console.WriteLine(results["results"].Count());
-
-
-
             //List<Result> restults = (List<Result>)JsonSerializer.Deserialize(splitJson[1], typeof(Result));
 
             return Results;
             
         }
 
+        /// <summary>
+        /// Makes a request to the MELI API to get the category name of a specific
+        /// category_id. then returns it to be used as a string. 
+        /// </summary>
+        /// <param name="category_id"></param>
+        /// <returns></returns>
         private static async Task<string> GetCategoryName(string category_id)
         {
             string response = "";
@@ -128,9 +125,31 @@ namespace ChallengeVoolkia
 
             }
             JObject results = JObject.Parse(response);
-            Console.WriteLine(results["name"].ToString());
-           
+                     
             return results["name"].ToString();
+        }
+
+        private static async void FileWriter(List<Result> results, string seller_id)
+        {
+            int index = 1; 
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("Seller:        "+seller_id);
+
+            foreach(Result res in results)
+            {
+                sb.AppendLine(index + "--------------------------------------------------");
+                sb.AppendLine("ID: " + res.id);
+                sb.AppendLine("Title: " + res.title);
+                sb.AppendLine("Cat.ID: " + res.category_id);
+                sb.AppendLine("Cat. Name: " + res.name);
+                
+                index++;
+            }
+
+            await File.WriteAllTextAsync("LOG.TXT", sb.ToString());
+            Console.WriteLine("Finished Writing");
+
         }
 
         public class Result
@@ -146,9 +165,23 @@ namespace ChallengeVoolkia
         }
 
 
+    }
+}
+                
+                
+                
+                
+
+                
+              
+                
+
+
+            
+
+
+
+
         
 
 
-
-    }
-}
