@@ -12,14 +12,14 @@ namespace ChallengeVoolkia
 {
     class Program
     {
-        static async void Main(string[] args)
+        static  void Main(string[] args)
         {
 
 
             string jsonData = "";
             //This would not work because the method is ASYNC and there's no await. 
             jsonData = GetProductsAsync("179571326").ToString();
-            //Console.WriteLine(jsonData);
+            /Console.WriteLine(jsonData);
             Console.ReadKey();
         }
 
