@@ -24,7 +24,7 @@ Verify that the instalation was correct by runing:
 dotnet
 ```
 ### 2 Download the file as  .Zip
-### 3 Open a terminal on the decompressed folder where the challengeVoolkia.csproj i'ts located
+### 3 Open a terminal on the decompressed folder where the challengeVoolkia.csproj is located
 ### 4 Write the next commands into the terminal:
 ```
 dotnet build
