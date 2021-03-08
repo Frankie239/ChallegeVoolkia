@@ -41,7 +41,7 @@ namespace ChallengeVoolkia
             //Creating a list to store all the results. 
             List<Result> ObjectsResult = new List<Result>();
             //String to store the json without being parsed
-            string rawData = await GetProductsAsync(seller_id);
+            string rawData = await ApiController.GetProductsAsync(seller_id);
 
             //Geting the data into the list of objects to later be printed into the txt file.
 
@@ -54,19 +54,7 @@ namespace ChallengeVoolkia
         }
 
 
-        /// <summary>
-        /// Makes a request to the MELI Api to return all the products from a specificy seller. 
-        /// </summary>
-        /// <param name="seller_id">the seller id expresed as a string.</param>
-        /// <returns></returns>
-        private static async Task<string> GetProductsAsync(string seller_id)
-        {
-            string response = "";
-            List<Result> itemsBySeller = new List<Result>();
-            response = await HttpGetToMeliApi("/sites/MLA/search?seller_id=" + seller_id);
-           
-            return response.ToString();
-        }
+       
 
                 
         /// <summary>
@@ -91,7 +79,7 @@ namespace ChallengeVoolkia
 
 
                 };
-                parsedObject.name = await GetCategoryName(parsedObject.category_id);
+                parsedObject.name = await ApiController.GetCategoryName(parsedObject.category_id);
 
                 Results.Add(parsedObject);
             }
@@ -102,46 +90,8 @@ namespace ChallengeVoolkia
             
         }
 
-        /// <summary>
-        /// Makes a request to the MELI API to get the category name of a specific
-        /// category_id. then returns it to be used as a string. 
-        /// </summary>
-        /// <param name="category_id"></param>
-        /// <returns></returns>
-        private static async Task<string> GetCategoryName(string category_id)
-        {
-            string response = await HttpGetToMeliApi("/categories/"+category_id);
-            
-            JObject results = JObject.Parse(response);
-                     
-            return results["name"].ToString();
-        }
+      
 
-
-        /// <summary>
-        /// Method to make a get requestand get the json Text
-        /// </summary>
-        /// <param name="requestString">the whole text that comes after "https://api.mercadolibre.com"</param>
-        /// <returns>Json string of the request</returns>
-        private static async Task<string> HttpGetToMeliApi(string requestString)
-        {
-            string response = "";
-
-            using (var client = new HttpClient())
-            {
-                //add a base addres. so this request can be done independent from the seller.
-                client.BaseAddress = new Uri("https://api.mercadolibre.com");
-                client.DefaultRequestHeaders.Accept.Clear();
-                //Accept the data type. 
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                //This returns the whole list requested from the seller. 
-                 response = await client.GetStringAsync(client.BaseAddress + requestString);
-            }
-
-            return response;
-
-        }
 
 
         /// <summary>
@@ -173,19 +123,6 @@ namespace ChallengeVoolkia
 
         }
 
-        /*
-        public class Result
-        {
-            public string id;
-
-            public string title;
-
-            public string category_id;
-
-            public string name;
-           
-        }
-        */
 
 
     }

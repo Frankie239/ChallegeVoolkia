@@ -13,6 +13,11 @@ namespace ChallengeVoolkia
         public string category_id;
 
         public string name;
-
     }
 }
+
+
+
+
+
+
