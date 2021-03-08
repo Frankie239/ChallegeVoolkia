@@ -1,4 +1,4 @@
-Seller:        179571326
+Seller:        179571326 
 1--------------------------------------------------
 ID: MLA863267784
 Title: Monitor Dell P2018h Led 20  Negro 100v/240v
@@ -95,13 +95,13 @@ Title: Servidor Poweredge Dell T40 Xeon E3-2224 16gb 2tb Hd Gtia
 Cat.ID: MLA1649
 Cat. Name: PC
 20--------------------------------------------------
-ID: MLA619999038
-Title: Ups Apc 550va 3 Tomas Gtia Oficial 2 Años Estabilizador Y Protector De Tension Con Ahorro De Energia
+ID: MLA614718493
+Title: Ups Apc Bx1100ci Para Tv, Play, Audio, 6 Tomas Estabilizador
 Cat.ID: MLA1720
 Cat. Name: UPS
 21--------------------------------------------------
-ID: MLA696010903
-Title: Ups Apc Src2ki-ar 2000va Online Tower Src2ki
+ID: MLA619999038
+Title: Ups Apc 550va 3 Tomas Gtia Oficial 2 Años Estabilizador Y Protector De Tension Con Ahorro De Energia
 Cat.ID: MLA1720
 Cat. Name: UPS
 22--------------------------------------------------
@@ -110,8 +110,8 @@ Title: Servidor Poweredge Dell T40 Intel E3-2224 16gb 1tb Hd Cuotas
 Cat.ID: MLA1649
 Cat. Name: PC
 23--------------------------------------------------
-ID: MLA614718493
-Title: Ups Apc Bx1100ci Para Tv, Play, Audio, 6 Tomas Estabilizador
+ID: MLA696010903
+Title: Ups Apc Src2ki-ar 2000va Online Tower Src2ki
 Cat.ID: MLA1720
 Cat. Name: UPS
 24--------------------------------------------------
@@ -140,45 +140,45 @@ Title: Ups Apc 1500va Estabilizador Y Protector De Tension - Alto Rendimiento Pa
 Cat.ID: MLA1720
 Cat. Name: UPS
 29--------------------------------------------------
-ID: MLA714624323
-Title: Switch 24p Cisco Sg350-28 10/100/1000 Sg350-28-k9
-Cat.ID: MLA1708
-Cat. Name: Switches
+ID: MLA696009826
+Title: Ups Apc 1000va Online Tower Gtia 2 Años
+Cat.ID: MLA1720
+Cat. Name: UPS
 30--------------------------------------------------
 ID: MLA910713865
 Title: Pc Dell I3 4gb 1tb Windows 10 Pro Vostro Gtia Oficial
 Cat.ID: MLA1649
 Cat. Name: PC
 31--------------------------------------------------
-ID: MLA696009826
-Title: Ups Apc 1000va Online Tower Gtia 2 Años
-Cat.ID: MLA1720
-Cat. Name: UPS
-32--------------------------------------------------
 ID: MLA814217735
 Title: Servidor Dell T140 Xeon E3-2124 32gb 4tb Reemplazo T130
 Cat.ID: MLA1649
 Cat. Name: PC
-33--------------------------------------------------
+32--------------------------------------------------
 ID: MLA604317175
 Title: Ups Apc 800va 6 Tomas Estabilizador Y Protector De Tension Gtia Oficial De 2 Años Para Gamer Bx800 Para Tv, Play
 Cat.ID: MLA1720
 Cat. Name: UPS
-34--------------------------------------------------
+33--------------------------------------------------
 ID: MLA800415301
 Title: Servidor Dell T140 Xeon E3-2124 16gb 2tb Reemplazo T130
 Cat.ID: MLA1649
 Cat. Name: PC
-35--------------------------------------------------
-ID: MLA701423768
-Title: Switch Cisco 8 Puertos Port 10/100/1000 Giga Sg100 Oferta Para Hogar Y Empresa - Garantia Oficial - Factura A Y B
+34--------------------------------------------------
+ID: MLA714624323
+Title: Switch 24p Cisco Sg350-28 10/100/1000 Sg350-28-k9
 Cat.ID: MLA1708
 Cat. Name: Switches
-36--------------------------------------------------
+35--------------------------------------------------
 ID: MLA609714711
 Title: Ups Apc Back-ups Pro 550va 230 Estabilizador Y Protector De Tensión Con Ahorro De Energia Gtia Oficial Br550
 Cat.ID: MLA1720
 Cat. Name: UPS
+36--------------------------------------------------
+ID: MLA701423768
+Title: Switch Cisco 8 Puertos Port 10/100/1000 Giga Sg100 Oferta Para Hogar Y Empresa - Garantia Oficial - Factura A Y B
+Cat.ID: MLA1708
+Cat. Name: Switches
 37--------------------------------------------------
 ID: MLA675284743
 Title: Router Cisco Rv160-k9-ar Cisco Rv160 Vpn Smb
@@ -240,7 +240,7 @@ Title: Switch Cisco Sf110d-05 5 Puertos 10/100 Sf110 (ex Sf100d-05)
 Cat.ID: MLA1708
 Cat. Name: Switches
 49--------------------------------------------------
-ID: MLA835639612
-Title: Sg250-50-k9-ar Cisco Sg250-50 50-port Gigabit Smart Switch
+ID: MLA709978209
+Title: Switch 8 Bocas Cisco 8 Puertos 10/100mbps Oferta Para Hogar Y Empresa - Garantia Oficial - Factura A Y B
 Cat.ID: MLA1708
 Cat. Name: Switches

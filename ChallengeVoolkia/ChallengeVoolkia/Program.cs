@@ -63,21 +63,8 @@ namespace ChallengeVoolkia
         {
             string response = "";
             List<Result> itemsBySeller = new List<Result>();
-
-            //create a Idisposable object so it can be throw away when this execution ends. 
-            using (var client = new HttpClient())
-            {
-                //add a base addres. so this request can be done independent from the seller.
-                client.BaseAddress = new Uri("https://api.mercadolibre.com/sites/MLA/search?seller_id=");
-                client.DefaultRequestHeaders.Accept.Clear();
-                //Accept the data type. 
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                //This returns the whole list requested from the seller. 
-                response = await client.GetStringAsync(client.BaseAddress + seller_id);
-            }
-
-
+            response = await HttpGetToMeliApi("/sites/MLA/search?seller_id=" + seller_id);
+           
             return response.ToString();
         }
 
@@ -123,23 +110,37 @@ namespace ChallengeVoolkia
         /// <returns></returns>
         private static async Task<string> GetCategoryName(string category_id)
         {
+            string response = await HttpGetToMeliApi("/categories/"+category_id);
+            
+            JObject results = JObject.Parse(response);
+                     
+            return results["name"].ToString();
+        }
+
+
+        /// <summary>
+        /// Method to make a get requestand get the json Text
+        /// </summary>
+        /// <param name="requestString">the whole text that comes after "https://api.mercadolibre.com"</param>
+        /// <returns>Json string of the request</returns>
+        private static async Task<string> HttpGetToMeliApi(string requestString)
+        {
             string response = "";
+
             using (var client = new HttpClient())
             {
                 //add a base addres. so this request can be done independent from the seller.
-                client.BaseAddress = new Uri("https://api.mercadolibre.com/categories/");
+                client.BaseAddress = new Uri("https://api.mercadolibre.com");
                 client.DefaultRequestHeaders.Accept.Clear();
                 //Accept the data type. 
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 //This returns the whole list requested from the seller. 
-                response = await client.GetStringAsync(client.BaseAddress + category_id);
-
-
+                 response = await client.GetStringAsync(client.BaseAddress + requestString);
             }
-            JObject results = JObject.Parse(response);
-                     
-            return results["name"].ToString();
+
+            return response;
+
         }
 
 
