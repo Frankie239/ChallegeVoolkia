@@ -52,7 +52,7 @@ namespace ChallengeVoolkia
         /// <returns></returns>
         public static async Task<string> GetProductsAsync(string seller_id)
         {
-            string response = "";
+            string response;
             List<Result> itemsBySeller = new List<Result>();
             response = await HttpGetToMeliApi("/sites/MLA/search?seller_id=" + seller_id);
 

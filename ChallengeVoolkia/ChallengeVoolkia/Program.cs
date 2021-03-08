@@ -108,12 +108,8 @@ namespace ChallengeVoolkia
 
             foreach(Result res in results)
             {
-                sb.AppendLine(index + "--------------------------------------------------");
-                sb.AppendLine("ID: " + res.id);
-                sb.AppendLine("Title: " + res.title);
-                sb.AppendLine("Cat.ID: " + res.category_id);
-                sb.AppendLine("Cat. Name: " + res.name);
-                
+                sb.Append(res.Serialize(index));
+
                 index++;
             }
 
