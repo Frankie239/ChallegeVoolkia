@@ -14,6 +14,8 @@ namespace ChallengeVoolkia
 
         public string name;
 
+
+
         public string Serialize(int index)
         {
             StringBuilder sb = new StringBuilder();

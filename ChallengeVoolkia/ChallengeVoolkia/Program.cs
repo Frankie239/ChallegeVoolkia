@@ -19,6 +19,7 @@ namespace ChallengeVoolkia
             string seller = Console.ReadLine();
             string[] sellers = seller.Split(',');
 
+            
             for (int i = 0; i < sellers.Count(); i++)
             {
                 WriteFileWithSellerId(sellers[i]);
@@ -115,7 +116,7 @@ namespace ChallengeVoolkia
 
             await File.WriteAllTextAsync("LOG-"+seller_id+"-.txt", sb.ToString());
 
-            Console.WriteLine("Finnished" +seller_id);
+            Console.WriteLine("Finnished " +seller_id);
 
         }
 
