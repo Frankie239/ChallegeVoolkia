@@ -173,6 +173,7 @@ namespace ChallengeVoolkia
 
         }
 
+        /*
         public class Result
         {
             public string id;
@@ -184,6 +185,7 @@ namespace ChallengeVoolkia
             public string name;
            
         }
+        */
 
 
     }
