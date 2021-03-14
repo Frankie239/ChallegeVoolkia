@@ -16,9 +16,9 @@ namespace ChallengeVoolkia
         {
 
             Console.WriteLine("Bienvenido, por favor ingrese el seller_id que quiere consultar, si desea agregar mas de uno, separelos por comas.");
-            //Capute the seller_id
+            //Capture the seller_id(long string) 
             string seller = Console.ReadLine();
-            //Split them by the commas. 
+            //Splitting them by the commas. 
             string[] sellers = seller.Split(',');
 
             
