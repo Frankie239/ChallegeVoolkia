@@ -16,21 +16,24 @@ namespace ChallengeVoolkia
         {
 
             Console.WriteLine("Bienvenido, por favor ingrese el seller_id que quiere consultar, si desea agregar mas de uno, separelos por comas.");
+            //Capute the seller_id
             string seller = Console.ReadLine();
+            //Split them by the commas. 
             string[] sellers = seller.Split(',');
 
             
             for (int i = 0; i < sellers.Count(); i++)
             {
+                //For each one of them, execute this function: 
                 WriteFileWithSellerId(sellers[i]);
             }
             
 
-            Console.WriteLine("Escribiendo, por favor espere...");
+            Console.WriteLine("Escribiendo, por favor no presione enter y espere...");
 
+
+            Console.ReadLine();
             
-
-            Console.ReadKey();
         }
 
         /// <summary>
@@ -67,15 +70,16 @@ namespace ChallengeVoolkia
         {
             List<Result> Results = new List<Result>(); 
 
-            JObject results = JObject.Parse(rawJson);
+            JObject jsonParsed = JObject.Parse(rawJson);
 
-            for (int i = 0; i < results["results"].Count()-1; i++)
+            for (int i = 0; i < jsonParsed["results"].Count()-1; i++)
             {
+                //Create a new object to later store it into the list. 
                 Result parsedObject = new Result()
                 {
-                    id = results["results"][i]["id"].ToString(),
-                    title = results["results"][i]["title"].ToString(),
-                    category_id = results["results"][i]["category_id"].ToString(),
+                    id = jsonParsed["results"][i]["id"].ToString(),
+                    title = jsonParsed["results"][i]["title"].ToString(),
+                    category_id = jsonParsed["results"][i]["category_id"].ToString(),
                     
 
 
